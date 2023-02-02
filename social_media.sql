@@ -4,9 +4,9 @@ create table User_Account(
 	name varchar(50),
 	email varchar(50),
 	password varchar(50),
-    
-	date_created datetime default now(),
-	date_modified datetime on update now(),
+    -- fix in error here auto date time add doesn't work!
+	date_created timestamp default current_timestamp,
+	date_modified timestamp default current_timestamp on update current_timestamp,
 		primary key(UID)
 );
 -- User Hobby category
@@ -24,8 +24,8 @@ create table User_Profile(
     profile_cover_image varchar(255),
     user_hobbies varchar(50),
     
-    date_created datetime default now(),
-    date_modified datetime on update now(),
+    date_created timestamp default current_timestamp,
+    date_modified timestamp on update current_timestamp null,
 		FOREIGN KEY (UID) REFERENCES User_Account(UID),
         FOREIGN KEY (user_hobbies) REFERENCES Hobbies(hobby_name)
 );
@@ -45,7 +45,7 @@ create table Post(
     caption varchar(255),
     post_image varchar(255),
     -- like_count int,
-    date_created datetime default now(),
+    date_created timestamp default current_timestamp,
     author varchar(50),
 		primary key (post_id),
 		foreign key (author) references User_Profile(UID)
@@ -82,8 +82,8 @@ create table User_Page(
     -- followers int,
 	page_admin varchar(50),
     page_post int,
-    date_created datetime default now(),
-    date_modified datetime on update now(),
+    date_created timestamp default current_timestamp,
+    date_modified timestamp on update current_timestamp null,
 		primary key (page_name),
         foreign key (page_admin) references User_Profile(UID)
         -- foreign key (followers) references UserProfile(UID)
@@ -96,7 +96,7 @@ create table User_Group(
     group_cover_image varchar(155),
     -- group_members int,
     -- group_posts int,
-    date_created datetime default now(),
+    date_created timestamp default current_timestamp,
 		primary key(group_name),
 		foreign key(group_admin) references User_Profile(UID)
 );
@@ -131,7 +131,8 @@ create table Group_Members(
 -- 12 Group_Members
 
 show databases;
-use social_media;
+use social_mediadb;
 create database social_mediaDB;
 show tables;
 drop table user_account;
+drop database social_mediadb;

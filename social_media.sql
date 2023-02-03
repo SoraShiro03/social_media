@@ -125,7 +125,7 @@ create table Group_Members(
 -- 4 User_Friends
 -- 5 Post
 -- 6 Reaction
--- 7 Reaction_Type
+-- 7 Reaction_Type (here i reached)
 -- 8 User_Save_Collection
 -- 9 User_Page
 -- 10 User_Group

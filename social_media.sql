@@ -25,7 +25,8 @@ create table User_Profile(
     user_hobbies varchar(50),
     
     date_created timestamp default current_timestamp,
-    date_modified timestamp on update current_timestamp null,
+    date_modified timestamp on update current_timestamp,
+		PRIMARY KEY (UID),
 		FOREIGN KEY (UID) REFERENCES User_Account(UID),
         FOREIGN KEY (user_hobbies) REFERENCES Hobbies(hobby_name)
 );
@@ -44,9 +45,10 @@ create table Post(
 	post_id varchar(255),
     caption varchar(255),
     post_image varchar(255),
-    -- like_count int,
+	author varchar(50),
+    
     date_created timestamp default current_timestamp,
-    author varchar(50),
+   
 		primary key (post_id),
 		foreign key (author) references User_Profile(UID)
 );
@@ -134,5 +136,5 @@ show databases;
 use social_mediadb;
 create database social_mediaDB;
 show tables;
-drop table user_account;
+drop table user_profile;
 drop database social_mediadb;

@@ -1,4 +1,4 @@
--- insert into Hobbies values('swimming');
+insert into Hobbies values('swimming');
 insert into Hobbies values('gaming');
 insert into Hobbies values('singing');
 insert into Hobbies values('listening to music');

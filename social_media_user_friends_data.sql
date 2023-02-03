@@ -44,4 +44,38 @@ insert into User_Friends values('KPTMYK--001068', 'KPTMYK--001227');
 insert into User_Friends values('KPTMYK--001068', 'KPTMYK--001379');
 
 -- hsu neyik wai
-
+insert into User_Friends (user_profile_id, friend_profile_id)
+	values
+		('KPTMYK--001067', 'KPTMYK--001227'),
+		('KPTMYK--001067', 'KPTMYK--001379'),
+		('KPTMYK--001067', 'KPTMYK--001219'),
+	-- Ye Min Oo
+		('KPTMYK--001227', 'KPTMYK--001379'),
+        ('KPTMYK--001227', 'KPTMYK--001219'),
+        ('KPTMYK--001227', 'KPTMYK--001217'),
+	-- Soe Than
+		('KPTMYK--001379', 'KPTMYK--001219'),
+        ('KPTMYK--001379', 'KPTMYK--001217'),
+        ('KPTMYK--001379', 'KPTMYK--001232'),
+	-- Zue Lin Let Lwin
+		('KPTMYK--001219', 'KPTMYK--001217'),
+        ('KPTMYK--001219', 'KPTMYK--001232'),
+        ('KPTMYK--001219', 'KPTMYK--001169'),
+	-- Pyae Hein
+		('KPTMYK--001217', 'KPTMYK--001232'),
+        ('KPTMYK--001217', 'KPTMYK--001169'),
+		('KPTMYK--001217', 'KPTMYK--001103'),
+	-- Hlyan Htet Aung
+		('KPTMYK--001232', 'KPTMYK--001169'),
+        ('KPTMYK--001232', 'KPTMYK--001103'),
+        ('KPTMYK--001232', 'KPTMYK--001209'),
+    -- Min Pyae Sone
+		('KPTMYK--001169', 'KPTMYK--001103'),
+        ('KPTMYK--001169', 'KPTMYK--001209'),
+        ('KPTMYK--001169', 'KPTMYK--001171'),
+	-- TheinKha Kyaw
+		('KPTMYK--001103', 'KPTMYK--001209'),
+        ('KPTMYK--001103', 'KPTMYK--001171'),
+		('KPTMYK--001103', 'KPTMYK--001162');
+        
+select * from user_friends;

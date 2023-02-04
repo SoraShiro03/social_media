@@ -72,6 +72,7 @@ create table Reaction(
 create table User_Save_Collection(
 	save_item varchar(255),
     author varchar(50), 
+    
 		foreign key(save_item) references Post(post_id),
 		foreign key(author) references User_Profile(UID)
 );
@@ -81,15 +82,13 @@ create table User_Page(
 	page_name varchar(50),
     page_profile_image varchar(155),
     page_cover_image varchar(155),
-    -- followers int,
 	page_admin varchar(50),
-    page_post int,
+    -- page_post int, (add a table for it if you want to connect with your page)
     date_created timestamp default current_timestamp,
-    date_modified timestamp on update current_timestamp null,
+    date_modified timestamp on update current_timestamp,
+    
 		primary key (page_name),
         foreign key (page_admin) references User_Profile(UID)
-        -- foreign key (followers) references UserProfile(UID)
-        
 );
 -- Users can intereact each other more easily when users want to intereact multiple users at the same time or same place
 create table User_Group(
@@ -127,7 +126,7 @@ create table Group_Members(
 -- 6 Reaction
 -- 7 Reaction_Type (here i reached)
 -- 8 User_Save_Collection
--- 9 User_Page
+-- 9 User_Page (optional followers table)
 -- 10 User_Group
 -- 11 Group_Post
 -- 12 Group_Members
@@ -136,5 +135,7 @@ show databases;
 use social_mediadb;
 create database social_mediaDB;
 show tables;
-drop table user_profile;
+drop table user_page;
 drop database social_mediadb;
+
+select * from user_account;

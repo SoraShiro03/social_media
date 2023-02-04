@@ -95,8 +95,8 @@ create table User_Group(
 	group_name varchar(255),
     group_admin varchar(50),
     group_cover_image varchar(155),
-    -- group_members int,
-    -- group_posts int,
+    -- group_members int, (add table for it)
+    -- group_posts int, (add table for it)
     date_created timestamp default current_timestamp,
 		primary key(group_name),
 		foreign key(group_admin) references User_Profile(UID)
@@ -124,18 +124,18 @@ create table Group_Members(
 -- 4 User_Friends
 -- 5 Post
 -- 6 Reaction
--- 7 Reaction_Type (here i reached)
+-- 7 Reaction_Type 
 -- 8 User_Save_Collection
 -- 9 User_Page (optional followers table)
 -- 10 User_Group
 -- 11 Group_Post
--- 12 Group_Members
+-- 12 Group_Members (here i reached)
 
 show databases;
 use social_mediadb;
 create database social_mediaDB;
 show tables;
-drop table user_page;
+drop table group_members;
 drop database social_mediadb;
 
 select * from user_account;
